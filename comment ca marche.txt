@@ -1,0 +1,6 @@
+ouvrir un CMD dans le dossier
+pyhton -m http.server
+attendre un peu
+sur chrome : http://localhost:8000/
+
+normalement ça marche
