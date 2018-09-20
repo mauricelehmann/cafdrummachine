@@ -1,0 +1,70 @@
+@media (max-width: 992px) {
+    .defile {
+      display:block;
+      -webkit-animation:linear marqueelike 25s infinite ;
+      -moz-animation:linear marqueelike 25s infinite ;
+      -o-animation:linear marqueelike 25s infinite ;
+      -ms-animation:linear marqueelike 25s infinite ;
+      animation:linear marqueelike 25s infinite ;
+      margin-left:-100%;
+      padding:0 5px;
+      text-align:left;
+      height:25px;
+    }
+    .back-team-two  {
+        width: 100px;
+    }
+    .back-team {
+        width: 180px;
+    }
+}
+
+.defileParent {
+    display: block;
+    /* margin: 3em auto; */
+    overflow: hidden;
+    position: fixed;
+    table-layout: fixed;
+    /* width: 700px; */
+    height: 55px;
+}
+.defile {
+  display:block;
+  -webkit-animation:linear marqueelike 25s infinite ;
+  -moz-animation:linear marqueelike 25s infinite ;
+  -o-animation:linear marqueelike 25s infinite ;
+  -ms-animation:linear marqueelike 25s infinite ;
+  animation:linear marqueelike 25s infinite ;
+  margin-left:-100%;
+  padding:0 5px;
+  text-align:left;
+  height:55px;
+}
+
+.defile:after {
+  /* content:attr(data-text);*/
+  position:absolute;
+  white-space:nowrap;
+  padding-left:10px;
+}
+
+@-webkit-keyframes marqueelike {
+  0%, 100% {margin-left:0;}
+  100% {margin-left:-100%;}
+ }
+@-moz-keyframes marqueelike {
+  0%, 100% {margin-left:0;}
+  100% {margin-left:-100%;}
+ }
+@-o-keyframes marqueelike {
+  0%, 100% {margin-left:0;}
+  100% {margin-left:-100%;}
+ }
+@-ms-keyframes marqueelike {
+  0%, 100% {margin-left:0;}
+  100% {margin-left:-100%;}
+ }
+@keyframes marqueelike {
+  0%, 100% {margin-left:0;}
+  100% {margin-left:-100%;}
+ }
