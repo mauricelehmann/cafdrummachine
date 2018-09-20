@@ -25,7 +25,7 @@ instrument.prototype.setInstrumentButtons = function () {
       //Add function when button is pressed
       this.seqButtonArray[n].mousePressed(SeqPatternButtonHandler(this.name,n));
       //Set style
-      this.seqButtonArray[n].style('background-color', color(0,255,0));
+      this.seqButtonArray[n].style('background-color', color(0,200,100,100));
       this.seqButtonArray[n].addClass('button');
     }
 
@@ -55,11 +55,11 @@ instrument.prototype.changePattern = function (m) {
     //Enable the cross on the pattern
     this.pattern[m] = 1 ;
     //Change color
-    this.seqButtonArray[m].style('background-color', color(255, 0, 0));
+    this.seqButtonArray[m].style('background-color', color(200, 0, 0,100));
   } else {
     //Disable it
     this.pattern[m] = 0 ;
-    this.seqButtonArray[m].style('background-color', color(0, 255, 0));
+    this.seqButtonArray[m].style('background-color', color(0,200,100,100));
   }
 };
 
