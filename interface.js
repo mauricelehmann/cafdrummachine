@@ -1,22 +1,20 @@
 function setButtons(){
-  //Buttons setup
 
+  //Buttons setup
   var buttonPlayPattern = createButton("Play pattern")  ;
   buttonPlayPattern.mousePressed(playGlobalPattern);
   buttonPlayPattern.parent("playAll") ;
+  buttonPlayPattern.addClass('button');
+
   //Slider BPM
   slider = createSlider(60, 200, 120, 1);
   slider.style('width', '500px');
   slider.parent("BPMSlider") ;
 
-  Instruments['clap'].setSequenceButtons() ;
-  Instruments['clap'].setPitchButtons() ;
-  Instruments['snare'].setSequenceButtons() ;
-  Instruments['snare'].setPitchButtons() ;
-  Instruments['kick'].setSequenceButtons() ;
-  Instruments['kick'].setPitchButtons() ;
-  Instruments['hihat'].setSequenceButtons() ;
-  Instruments['hihat'].setPitchButtons() ;
+  Instruments['clap'].setInstrumentButtons() ;
+  Instruments['snare'].setInstrumentButtons() ;
+  Instruments['kick'].setInstrumentButtons() ;
+  Instruments['hihat'].setInstrumentButtons() ;
 
 }
 
