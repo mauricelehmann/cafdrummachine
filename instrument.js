@@ -27,16 +27,20 @@ instrument.prototype.setSequenceButtons = function () {
     }
 };
 
-instrument.prototype.pitchSample = function( value ){
-  this.sample.rate += this.sample.rate() + value ;
+pitchHandler = function( name , value ){
+  return function(){
+    Instruments[name].sample.rate(Instruments[name].sample.rate() + value) ;
+  }
 }
 
 instrument.prototype.setPitchButtons = function () {
+  //TODO : Automatiser
   this.paramButtonArray.push(createButton('pitch +')) ;
   this.paramButtonArray.push(createButton('pitch -')) ;
   this.paramButtonArray[0].parent('pitchUp'+ this.name);
   this.paramButtonArray[1].parent('pitchDown'+ this.name);
-  this.paramButtonArray[0].mousePressed( function(){ this.pitchSample(1) });
+  this.paramButtonArray[0].mousePressed(pitchHandler( this.name , 0.1));
+  this.paramButtonArray[1].mousePressed(pitchHandler( this.name ,-0.1));
 };
 
 instrument.prototype.changePattern = function (m) {

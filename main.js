@@ -29,4 +29,5 @@ function setup() {
 function draw(){
   globalPattern.setBPM(slider.value());
   showPattern() ;
+
 }
