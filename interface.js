@@ -11,6 +11,7 @@ function setButtons(){
   slider.style('width', '500px');
   slider.parent("BPMSlider") ;
 
+
   Instruments['clap'].setInstrumentButtons() ;
   Instruments['snare'].setInstrumentButtons() ;
   Instruments['kick'].setInstrumentButtons() ;
@@ -18,10 +19,16 @@ function setButtons(){
 
 }
 
+
+//TODO : Delete ?
 function showPattern(){
   //Clear the html element, otherwise it will be filled in loop
   document.getElementById('pattern').innerHTML = '' ;
   for( index in Instruments ){
     document.getElementById('pattern').innerHTML += JSON.stringify(Instruments[index].pattern) + '<br>';
   }
+}
+
+function valuesListeners(){
+    select('#BPMtext').html(slider.value()) ;
 }

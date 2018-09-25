@@ -11,3 +11,11 @@ function keyPressed() {
       playGlobalPattern() ;
     }
 }
+
+function setEffects(){
+    
+}
+
+function reverbProcess(){
+
+}

@@ -33,7 +33,7 @@ instrument.prototype.setInstrumentButtons = function () {
     //TODO : Automatiser
     this.paramButtonArray.push(createButton('pitch +')) ;
     this.paramButtonArray.push(createButton('pitch -')) ;
-    this.paramButtonArray.push(createButton('Mute')) ;
+    this.paramButtonArray.push(createButton('Mute '+this.name)) ;
     //DOM
     //TODO : Mettre le CSS , attribut DOM et style ailleurs !
     this.paramButtonArray[0].parent('pitchUp'+ this.name);

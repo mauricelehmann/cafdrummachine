@@ -1,6 +1,6 @@
 var globalPattern ;
 var Instruments ;
-var slider ;
+var slider, textSlider ;
 
 function preload() {
   soundFormats('mp3', 'ogg');
@@ -9,6 +9,7 @@ function preload() {
                   'kick'  : new instrument('kick')  ,
                   'snare' : new instrument('snare') ,
                   'hihat' :  new instrument('hihat') }  ;
+
 }
 
 function setup() {
@@ -28,6 +29,7 @@ function setup() {
 
 function draw(){
   globalPattern.setBPM(slider.value());
-  showPattern() ;
+  //Refresh informations on screen
+  valuesListeners() ;
 
 }
