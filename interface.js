@@ -12,7 +12,7 @@ function setButtons(){
   BPMslider.parent("BPMSlider") ;
 
   //Slider BPM for nap
-  napSlider = createSlider(0, 20, 1, 0.1);
+  napSlider = createSlider(0, 20, 5, 0.1);
   napSlider.style('width', '500px');
   napSlider.parent("playNap") ;
 

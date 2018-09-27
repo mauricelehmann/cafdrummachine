@@ -7,6 +7,9 @@ function instrument( name ) {
     this.seqButtonArray = [] ;
     this.paramButtonArray = [] ;
     this.phrase = new p5.Phrase(this.name , this.playPhrase , this.pattern) ;
+    this.delay = new p5.Delay();
+    this.delay.setType('pingPong');
+    this.isDelaying = false ;
 
 }
 //
@@ -33,19 +36,23 @@ instrument.prototype.setInstrumentButtons = function () {
     //TODO : Automatiser
     this.paramButtonArray.push(createButton('pitch +')) ;
     this.paramButtonArray.push(createButton('pitch -')) ;
-    this.paramButtonArray.push(createButton('Mute '+this.name)) ;
+    this.paramButtonArray.push(createButton('Mute '+ this.name)) ;
+    this.paramButtonArray.push(createButton('Delay')) ;
     //DOM
     //TODO : Mettre le CSS , attribut DOM et style ailleurs !
     this.paramButtonArray[0].parent('pitchUp'+ this.name);
     this.paramButtonArray[1].parent('pitchDown'+ this.name);
     this.paramButtonArray[2].parent('mute'+ this.name);
+    this.paramButtonArray[3].parent('delay'+ this.name);
     this.paramButtonArray[0].addClass('button');
     this.paramButtonArray[1].addClass('button');
     this.paramButtonArray[2].addClass('button');
+    this.paramButtonArray[3].addClass('button');
     //Function on click
     this.paramButtonArray[0].mousePressed(pitchHandler( this.name , 0.1));
     this.paramButtonArray[1].mousePressed(pitchHandler( this.name ,-0.1));
     this.paramButtonArray[2].mousePressed(muteHandler( this.name ));
+    this.paramButtonArray[3].mousePressed(delayHandler( this.name ));
 
 };
 
@@ -84,4 +91,16 @@ function muteHandler( name ){
           Instruments[name].sample.setVolume(1) ;
       }
   }
+}
+
+function delayHandler( name ) {
+    return function() {
+        if(Instruments[name].isDelaying){
+            Instruments[name].delay.process(Instruments[name].sample, 0, 0, 2300);
+            Instruments[name].isDelaying = false ;
+        }else{
+            Instruments[name].delay.process(Instruments[name].sample, .1, .5, 2300);
+            Instruments[name].isDelaying = true ;
+        }
+    }
 }

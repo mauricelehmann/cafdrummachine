@@ -6,6 +6,9 @@ function playGlobalPattern(){
   }
 }
 
+function changeDelay( instrument, delayTime , feedback ) {
+    //delay.process(Instruments[instrument].sample, delayTime, feedback, 2300);
+}
 
 function keyPressed() {
   if (keyCode == 32) {
