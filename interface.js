@@ -7,10 +7,20 @@ function setButtons(){
   buttonPlayPattern.addClass('button');
 
   //Slider BPM
-  slider = createSlider(60, 200, 120, 1);
-  slider.style('width', '500px');
-  slider.parent("BPMSlider") ;
+  BPMslider = createSlider(60, 200, 120, 1);
+  BPMslider.style('width', '500px');
+  BPMslider.parent("BPMSlider") ;
 
+  //Slider BPM for nap
+  napSlider = createSlider(0, 20, 1, 0.1);
+  napSlider.style('width', '500px');
+  napSlider.parent("playNap") ;
+
+  //Nap button
+  var buttonPlayNap = createButton("Play nap") ;
+  buttonPlayNap.mousePressed(playNap) ;
+  buttonPlayNap.parent("playNap") ;
+  buttonPlayNap.addClass('button');
 
   Instruments['clap'].setInstrumentButtons() ;
   Instruments['snare'].setInstrumentButtons() ;
@@ -19,16 +29,16 @@ function setButtons(){
 
 }
 
+function playNap() {
 
-//TODO : Delete ?
-function showPattern(){
-  //Clear the html element, otherwise it will be filled in loop
-  document.getElementById('pattern').innerHTML = '' ;
-  for( index in Instruments ){
-    document.getElementById('pattern').innerHTML += JSON.stringify(Instruments[index].pattern) + '<br>';
-  }
+    if(napSample.isPlaying()){
+        napSample.stop();
+    }else{
+        napSample.loop();
+    }
 }
 
+
 function valuesListeners(){
-    select('#BPMtext').html(slider.value()) ;
+    select('#BPMtext').html(BPMslider.value()) ;
 }

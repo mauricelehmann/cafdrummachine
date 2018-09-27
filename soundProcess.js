@@ -6,6 +6,7 @@ function playGlobalPattern(){
   }
 }
 
+
 function keyPressed() {
   if (keyCode == 32) {
       playGlobalPattern() ;
@@ -13,7 +14,7 @@ function keyPressed() {
 }
 
 function setEffects(){
-    
+
 }
 
 function reverbProcess(){
