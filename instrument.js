@@ -1,8 +1,7 @@
 function instrument( name ) {
 
     this.name = name ;
-    this.globalPatternSize = 8 ;
-    this.pattern = new Array(this.globalPatternSize).fill(0);
+    this.pattern = new Array(PATTERN_SIZE).fill(0);
     this.sample = loadSound('sound/'+ name + '.mp3');
     this.seqButtonArray = [] ;
     this.paramButtonArray = [] ;
@@ -20,11 +19,11 @@ instrument.prototype.playPhrase = function ( time , playbackRate ) {
 instrument.prototype.setInstrumentButtons = function () {
 
     //Sequence buttons
-    for( var n = 0 ; n < this.globalPatternSize ; n++){
+    for( var n = 0 ; n < PATTERN_SIZE ; n++){
       //Create buttons objects
       this.seqButtonArray.push(createButton(n));
       //DOM properties
-      this.seqButtonArray[n].parent( this.name + (n + 1) ) ;
+      this.seqButtonArray[n].parent( this.name + n ) ;
       //Add function when button is pressed
       this.seqButtonArray[n].mousePressed(SeqPatternButtonHandler(this.name,n));
       //Set style

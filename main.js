@@ -1,6 +1,9 @@
+
+const PATTERN_SIZE = 8 ;
 var globalPattern ;
 var Instruments, napSample ;
 var napSlider, BPMslider, textSlider ;
+var patternPos = 0 ;
 
 function preload() {
   soundFormats('mp3', 'ogg');
@@ -25,13 +28,16 @@ function setup() {
   globalPattern.addPhrase(Instruments['snare'].phrase);
   globalPattern.addPhrase(Instruments['kick'].phrase);
   globalPattern.addPhrase(Instruments['hihat'].phrase);
+  //Pulse
+  var pulse = new p5.Phrase('pulse', changePatternColor, [1,1,1,1,1,1,1]) ;
+  globalPattern.addPhrase(pulse);
 
   createCanvas(720, 200);
 
 }
 
 function draw(){
- 
+
   napSample.rate(napSlider.value() * 0.1 ) ;
   globalPattern.setBPM(BPMslider.value());
   //Refresh informations on screen

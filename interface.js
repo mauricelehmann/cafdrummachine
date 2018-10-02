@@ -42,3 +42,16 @@ function playNap() {
 function valuesListeners(){
     select('#BPMtext').html(BPMslider.value()) ;
 }
+
+function changePatternColor() {
+    //TODO : Decaler de deux case la coloration ? Ou comprendre pourquoi c'est décalé avec le son -> delay ? 
+    patternPos += 1 ;
+    var i = patternPos % PATTERN_SIZE ;
+    var j ;
+    //Avoid the "out of range"
+    i == 0 ? j = 7 : j = i - 1 ;
+    //TODO : Better color ?
+    document.getElementById('tempoLed'+j).style = "background-color:white" ;
+    document.getElementById('tempoLed'+i).style = "background-color:red" ;
+
+}
