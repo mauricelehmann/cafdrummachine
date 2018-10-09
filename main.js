@@ -1,9 +1,9 @@
-
-const PATTERN_SIZE = 8 ;
+const PATTERN_SIZE = 16 ;
 var globalPattern ;
-var Instruments, napSample ;
+var Instruments, napSample, pulse ;
 var napSlider, BPMslider, textSlider ;
 var patternPos = 0 ;
+var patternPart = 1 ;
 
 function preload() {
   soundFormats('mp3', 'ogg');
@@ -29,7 +29,7 @@ function setup() {
   globalPattern.addPhrase(Instruments['kick'].phrase);
   globalPattern.addPhrase(Instruments['hihat'].phrase);
   //Pulse
-  var pulse = new p5.Phrase('pulse', changePatternColor, [1,1,1,1,1,1,1]) ;
+  pulse = new p5.Phrase('pulse', changePatternColor, [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1]) ;
   globalPattern.addPhrase(pulse);
 
   createCanvas(720, 200);

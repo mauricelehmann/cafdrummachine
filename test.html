@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Bulma -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+    <style>
+        .show{
+            display:none ;
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+      <div class="container">
+
+          <button onclick="test()">coucou</button>
+          <table class="table is-bordered">
+          <tbody>
+            <tr>
+              <td id="playAll"></td>
+              <td id="BPMSlider" colspan="9"></td>
+              <td id="BPMtext"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="tempoLed0"></td>
+                <td id="tempoLed1"></td>
+                <td id="tempoLed2"></td>
+                <td id="tempoLed3"></td>
+                <td id="tempoLed4"></td>
+                <td id="tempoLed5"></td>
+                <td id="tempoLed6"></td>
+                <td id="tempoLed7"></td>
+           </tr>
+            <tr>
+                <td id="mutekick"></td>
+                  <td class="shown" id="kick0"><button class="button show">yey<button</td>
+                  <td class="shown"id="kick1">k1</td>
+                  <td class="shown" id="kick2">k1</td>
+                  <td class="shown" id="kick3">k1</td>
+                  <td class="shown" id="kick4">k1</td>
+                  <td class="shown" id="kick5">k1</td>
+                  <td class="shown" id="kick6">k1</td>
+                  <td class="shown" id="kick7">k1</td>
+                  <td class="shown" id="pitchUpkick"></td>
+                  <td class="shown" id="pitchDownkick"></td>
+                  <td class="shown" id="delaykick"></td>
+            </tr>
+             <tr id="tabs-2">
+                <td id="mutekick"></td>
+                 <td id="kick0">k2</td>
+                 <td id="kick1">k2</td>
+                 <td id="kick2">k2</td>
+                 <td id="kick3">k2</td>
+                 <td id="kick4">k2</td>
+                 <td id="kick5">k2</td>
+                 <td id="kick6">k2</td>
+                 <td id="kick7">k2</td>
+                 <td id="pitchUpkick"></td>
+                 <td id="pitchDownkick"></td>
+                 <td id="delaykick"></td>
+            </tr>
+
+            </tr>
+            <tr>
+              <td id="muteclap"></td>
+              <td id="clap0"></td>
+              <td id="clap1"></td>
+              <td id="clap2"></td>
+              <td id="clap3"></td>
+              <td id="clap4"></td>
+              <td id="clap5"></td>
+              <td id="clap6"></td>
+              <td id="clap7"></td>
+              <td id="pitchUpclap"></td>
+              <td id="pitchDownclap"></td>
+              <td id="delayclap"></td>
+            </tr>
+            <tr>
+              <td id="mutehihat"></td>
+              <div class="pat1">
+              <td id="hihat0"></td>
+              <td id="hihat1"></td>
+              <td id="hihat2"></td>
+              <td id="hihat3"></td>
+              <td id="hihat4"></td>
+              <td id="hihat5"></td>
+              <td id="hihat6"></td>
+              <td id="hihat7"></td>
+              </div>
+              <td id="pitchUphihat"></td>
+              <td id="pitchDownhihat"></td>
+              <td id="delayhihat"></td>
+            </tr>
+            <tr>
+              <td id="mutesnare"></td>
+              <td id="snare0"></td>
+              <td id="snare1"></td>
+              <td id="snare2"></td>
+              <td id="snare3"></td>
+              <td id="snare4"></td>
+              <td id="snare5"></td>
+              <td id="snare6"></td>
+              <td id="snare7"></td>
+              <td id="pitchUpsnare"></td>
+              <td id="pitchDownsnare"></td>
+              <td id="delaysnare"></td>
+            </tr>
+        </table>
+
+</div>
+</section>
+
+</body>
+</html>

@@ -21,14 +21,17 @@ instrument.prototype.setInstrumentButtons = function () {
     //Sequence buttons
     for( var n = 0 ; n < PATTERN_SIZE ; n++){
       //Create buttons objects
-      this.seqButtonArray.push(createButton(n));
+      this.seqButtonArray.push(createButton(n % 8));
       //DOM properties
-      this.seqButtonArray[n].parent( this.name + n ) ;
+      this.seqButtonArray[n].parent( this.name + (n % 8) ) ;
       //Add function when button is pressed
       this.seqButtonArray[n].mousePressed(SeqPatternButtonHandler(this.name,n));
       //Set style
       this.seqButtonArray[n].style('background-color', color(0,200,100,100));
       this.seqButtonArray[n].addClass('button');
+      if( n >= PATTERN_SIZE / 2  ){
+          this.seqButtonArray[n].addClass('button_hided');
+      }
     }
 
     //Pitch & mute buttons

@@ -68,3 +68,8 @@
   0%, 100% {margin-left:0;}
   100% {margin-left:-100%;}
  }
+
+
+.button_hided {
+    display:none ;
+}
